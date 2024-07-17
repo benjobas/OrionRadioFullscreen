@@ -63,6 +63,7 @@ We have a list of contributors who have helped us in the development of OrionCMS
 - **Lariesse** - TR translations
 - **Kamil** - DE translations
 - **Assholic** - Amazing GFX
+- **Benjobas** - Radio&Fullscreen on nitro
 
 If you want to contribute to the project, join our [Discord](https://discord.gg/Kb7USXupCT) and let us know about your interest in helping us.
 
