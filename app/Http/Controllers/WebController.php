@@ -14,7 +14,7 @@ class WebController extends Controller
     private const FIXED_ARTICLES_LIST_COUNT_WHEN_AUTH = 5;
 
     private const ARTICLES_LIST_COUNT_WHEN_AUTH = 5;
-    private const ARTICLES_LIST_COUNT_WHEN_GUEST = 8;
+    private const ARTICLES_LIST_COUNT_WHEN_GUEST = 3;
 
     public function index(): View
     {

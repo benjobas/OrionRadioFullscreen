@@ -12,7 +12,7 @@
     action="{{ $route }}"
     x-ref="form"
 >
-    <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-slate-800">
+    <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-customBlack">
         <label for="{{ $id }}" class="sr-only">Textarea Editor</label>
         <textarea
             x-show="!showPreview"
@@ -29,7 +29,7 @@
             <div class="min-h-[150px] text-sm dark:text-white text-gray-900" x-html="previewText"></div>
         </template>
     </div>
-    <div class="flex flex-col flex-wrap gap-2 lg:flex-row dark:bg-slate-850 bg-gray-100 rounded-b-lg items-center justify-between px-3 py-2 border-t dark:border-gray-600">
+    <div class="flex flex-col flex-wrap gap-2 lg:flex-row dark:bg-customBlack-dark bg-gray-100 rounded-b-lg items-center justify-between px-3 py-2 border-t dark:border-customBlack-light">
         <div x-show="!showPreview" class="flex pl-0 space-x-1 sm:pl-2">
             <x-ui.buttons.editor
                 icon="fa-solid fa-bold" type="{{ __('Bold') }}" before="[b]" after="[/b]"

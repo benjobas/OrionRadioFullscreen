@@ -6,7 +6,7 @@
     'small' => false,
     'imageIsBadge' => false,
     'titleClasses' => "font-semibold dark:text-white",
-    'descriptionClasses' => "text-slate-700 dark:text-slate-400",
+    'descriptionClasses' => "text-slate-50 dark:text-slate-400",
 ])
 
 <div class="w-full lg:h-16 flex-col lg:flex-row flex justify-between">

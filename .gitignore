@@ -20,3 +20,11 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/public/favicon.gif
+/public/websockets-room-info
+/public/nitro-assets
+/public/ms-swf
+/public/dist
+/public/distAntiguo
+/public/assets
+

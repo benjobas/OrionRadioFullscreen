@@ -2,7 +2,7 @@
     'unreadNotificationsCount' => 0
 ])
 
-<div class="relative w-full flex bg-white dark:bg-slate-950 h-24 dark:shadow-none rounded-lg shadow-lg dark:divide-slate-800">
+<div class="relative w-full flex bg-white dark:bg-customBlack-dark h-24 dark:shadow-none rounded-lg shadow-lg dark:divide-customBlack-light">
     <div class="w-full h-full flex">
         <div class="w-32 h-full p-1">
             <div class="w-full relative rounded-lg h-full bg-right-bottom bg-no-repeat" style="background-image: url('{{ \Auth::user()?->getAvatarBackground() ?? getSetting('default_avatar_background') }}')">
@@ -18,9 +18,9 @@
             </div>
         </div>
         <div class="w-full flex flex-col">
-            <div class="w-full rounded-t-lg flex justify-around items-center divide-x dark:divide-slate-800 h-16 bg-gray-100 dark:bg-gray-900">
+            <div class="w-full rounded-t-lg flex justify-around items-center divide-x dark:divide-customBlack-light h-16 bg-gray-100 dark:bg-customBlack">
                 <a
-                    class="h-full rounded-tl-lg flex-1 flex justify-center items-center hover:bg-gray-50 dark:hover:bg-slate-800"
+                    class="h-full rounded-tl-lg flex-1 flex justify-center items-center hover:bg-gray-50 dark:hover:bg-customBlack-light"
                     data-tippy
                     data-tippy-content="<small>{{ __('My Profile') }}</small>"
                     @auth href="{{ route('users.profile.show', Auth::user()->username) }}" @endauth
@@ -28,7 +28,7 @@
                     <img src="{{ asset('https://i.imgur.com/wYP2GOf.png') }}" alt="Profile icon" />
                 </a>
                 <a
-                    class="h-full flex-1 flex justify-center items-center hover:bg-gray-50 dark:hover:bg-slate-800"
+                    class="h-full flex-1 flex justify-center items-center hover:bg-gray-50 dark:hover:bg-customBlack-light"
                     data-tippy
                     data-tippy-content="<small>{{ __('My Settings') }}</small>"
                     @auth href="{{ route('users.settings.index') }}" @endauth
@@ -36,7 +36,7 @@
                     <img src="{{ asset('https://i.imgur.com/zjDy01f.gif') }}" alt="Settings icon" />
                 </a>
                 <a
-                    class="h-full flex-1 flex justify-center items-center hover:bg-gray-50 dark:hover:bg-slate-800"
+                    class="h-full flex-1 flex justify-center items-center hover:bg-gray-50 dark:hover:bg-customBlack-light"
                     data-tippy
                     data-tippy-content="<small>{{ __('My Achievements') }}</small>"
                     href=""
@@ -44,7 +44,7 @@
                     <img src="{{ asset('https://i.imgur.com/Re6k2iv.png') }}" alt="Achievements icon" />
                 </a>
                 <a
-                    class="h-full flex-1 flex justify-center items-center hover:bg-gray-50 dark:hover:bg-slate-800"
+                    class="h-full flex-1 flex justify-center items-center hover:bg-gray-50 dark:hover:bg-customBlack-light"
                     data-tippy
                     data-tippy-content="<small>{{ __('My Inbox') }}</small>"
                     href=""
@@ -52,7 +52,7 @@
                     <img src="{{ asset('https://i.imgur.com/d4oZMFz.png') }}" alt="Inbox icon" />
                 </a>
                 <a
-                    class="h-full flex-1 flex justify-center items-center hover:bg-gray-50 dark:hover:bg-slate-800"
+                    class="h-full flex-1 flex justify-center items-center hover:bg-gray-50 dark:hover:bg-customBlack-light"
                     data-tippy
                     data-tippy-content="<small>{{ __('Help & Tricks') }}</small>"
                     href="{{ route('support.questions.index') }}"
@@ -60,10 +60,10 @@
                     <img src="{{ asset('https://i.imgur.com/jy18kQD.png') }}" alt="Help icon" />
                 </a>
             </div>
-            <div class="w-full flex justify-start items-center divide-x h-8 dark:divide-slate-800">
+            <div class="w-full flex justify-start items-center divide-x h-8 dark:divide-customBlack-light">
                 <div
-                    class="flex relative flex-1 cursor-pointer h-full rounded-bl-lg items-center justify-center hover:bg-gray-50 dark:hover:bg-slate-800"
-                    x-bind:class="{ 'bg-gray-50 dark:bg-slate-800': opened }"
+                    class="flex relative flex-1 cursor-pointer h-full rounded-bl-lg items-center justify-center hover:bg-gray-50 dark:hover:bg-customBlack-light"
+                    x-bind:class="{ 'bg-gray-50 dark:bg-customBlack': opened }"
                     @click.self="opened = !opened"
                     @click.away="opened = false"
                     x-data="notification"
@@ -85,7 +85,7 @@
                     @include('components.header.fragments.user-notifications')
                 </div>
                 <a
-                    class="flex flex-1 relative h-full items-center justify-center hover:bg-gray-50 dark:hover:bg-slate-800"
+                    class="flex flex-1 relative h-full items-center justify-center hover:bg-gray-50 dark:hover:bg-customBlack-light"
                     href="{{ route('users.purchases') }}"
                     data-tippy
                     data-tippy-content="<small>{{ __('My Purchases') }}</small>"

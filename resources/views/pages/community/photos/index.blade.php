@@ -38,8 +38,8 @@
                         href="{{ route('community.photos.index', ['period' => $key, 'rule' => $rule ]) }}"
                         @class([
                             "py-2 text-white",
-                            "dark:bg-blue-500 bg-blue-500 border-blue-700 hover:bg-blue-400 dark:hover:bg-blue-400 dark:shadow-blue-700/75 shadow-blue-600/75" => $period != $key,
-                            "dark:bg-slate-500 bg-slate-500 border-slate-700 hover:bg-slate-400 dark:hover:bg-slate-400 dark:shadow-slate-700/75 shadow-slate-600/75" => (!$period && $key === null) || $period == $key
+                            "dark:bg-customCyan dark:border-customCyan-dark bg-customBlue border-customBlue-dark hover:bg-customBlue-light dark:hover:bg-customCyan-light dark:shadow-customCyan-700/75 shadow-customBlue-600/75" => $period != $key,
+                            "dark:bg-customPurple dark:border-customPurple-dark bg-customGreen border-customGreen-dark hover:bg-customGreen-light dark:hover:bg-customPurple-light dark:shadow-customPurple-700/75 shadow-customGreen-600/75" => (!$period && $key === null) || $period == $key
                         ])
                     >
                         {{ $label }}
@@ -54,8 +54,8 @@
                     href="{{ route('community.photos.index', ['rule' => $key, 'period' => $period ]) }}"
                     @class([
                             "py-2 text-white",
-                            "dark:bg-blue-500 bg-blue-500 border-blue-700 hover:bg-blue-400 dark:hover:bg-blue-400 dark:shadow-blue-700/75 shadow-blue-600/75" => $rule != $key,
-                            "dark:bg-slate-500 bg-slate-500 border-slate-700 hover:bg-slate-400 dark:hover:bg-slate-400 dark:shadow-slate-700/75 shadow-slate-600/75" => $rule == $key
+                            "dark:bg-customCyan dark:border-customCyan-dark bg-customBlue border-customBlue-dark hover:bg-customBlue-light dark:hover:bg-customCyan-light dark:shadow-customCyan-700/75 shadow-customBlue-600/75" => $rule != $key,
+                            "dark:bg-customPurple bg-customGreen dark:border-customPurple-dark border-customGreen-dark hover:bg-customGreen-light dark:hover:bg-customPurple-light dark:shadow-customPurple-700/75 shadow-customGreen-600/75" => $rule == $key
                         ])
                     >
                     {{ $label }}
@@ -67,9 +67,9 @@
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="lightgallery">
             @foreach ($photos as $photo)
-                <div class="bg-white dark:bg-slate-950 p-2 rounded-lg border-b-2 border-gray-300 dark:border-slate-800 shadow-lg h-auto">
+                <div class="bg-white dark:bg-customBlack-dark p-2 rounded-lg border-b-2 border-gray-300 dark:border-customBlack-dark shadow-lg h-auto">
                     <div
-                        class="bg-center border border-slate-300 dark:border-slate-700 hover:scale-[1.05] transition-transform relative group lightgallery-image cursor-pointer flex items-end justify-center w-full h-48 bg-no-repeat rounded-t-lg"
+                        class="bg-center border border-slate-300 dark:border-customBlack-dark hover:scale-[1.05] transition-transform relative group lightgallery-image cursor-pointer flex items-end justify-center w-full h-48 bg-no-repeat rounded-t-lg"
                         data-src="{{ $photo->url }}"
                         @if($photo->user)
                         data-sub-html='<h4>{{ __("Photo by") }} <a href="{{ route('users.profile.show', $photo->user->username) }}" class="underline underline-offset-4">{{ $photo->user->username }}</a></h4><p>{{ __("Photo taken on") }} <b>{{ $photo->formattedDate }}</b>@if($photo->room) {{ __("in the room") }} <a href="#" class="underline underline-offset-4">{{ $photo->room->name }}</a>@endif</p>'
@@ -99,10 +99,10 @@
                             @endauth
                         </div>
                     </div>
-                    <div class="w-full flex justify-start items-center gap-3 p-1 bg-gray-100 rounded-b-lg border-t-2 border-gray-300 dark:border-slate-600 dark:bg-gray-900">
+                    <div class="w-full flex justify-start items-center gap-3 p-1 bg-gray-100 rounded-b-lg border-t-2 border-gray-300 dark:border-slate-600 dark:bg-customBlack">
                         <div
                             @class([
-                                "w-[50px] min-w-[50px] h-[50px] bg-no-repeat rounded-full bg-white border border-gray-200 dark:bg-gray-950 dark:border-black",
+                                "w-[50px] min-w-[50px] h-[50px] bg-no-repeat rounded-full bg-white border border-gray-200 dark:bg-customBlack-dark dark:border-black",
                                 "bg-center" => !$usingNitroImager,
                                 "bg-[-20px_-27px]" => $usingNitroImager
                             ])

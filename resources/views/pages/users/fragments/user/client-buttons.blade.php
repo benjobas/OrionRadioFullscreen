@@ -17,7 +17,7 @@
                 <x-ui.buttons.redirectable
                     href="{{ route('hotel.nitro') }}"
                     data-turbolinks="false"
-                    class="dark:bg-blue-500 text-center truncate bg-blue-500 border-blue-700 hover:bg-blue-400 dark:hover:bg-blue-400 dark:shadow-blue-700/75 shadow-blue-600/75 py-2 text-white rounded-full"
+                    class="dark:bg-customCyan dark:border-customCyan-dark text-center truncate bg-customBlue border-customBlue-dark hover:bg-customBlue-light dark:hover:bg-customCyan-light dark:shadow-customCyan-700/75 shadow-customBlue-600/75 py-2 text-white rounded-full"
                 >
                     {{ __('Join (Nitro HTML5)') }}
                 </x-ui.buttons.redirectable>
@@ -37,7 +37,7 @@
                 <x-ui.buttons.redirectable
                     href="/admin"
                     target="_blank"
-                    class="dark:bg-indigo-500 text-center truncate bg-indigo-500 border-indigo-700 hover:bg-indigo-400 dark:hover:bg-indigo-400 dark:shadow-indigo-700/75 shadow-indigo-600/75 py-2 text-white rounded-full"
+                    class="dark:bg-customPurple dark:border-customPurple-dark text-center truncate bg-customGreen border-customGreen-dark hover:bg-customGreen-light dark:hover:bg-customPurple-light dark:shadow-customPurple-700/75 shadow-customGreen-600/75 py-2 text-white rounded-full"
                 >
                     <i class="fa-solid fa-chart-line mr-1"></i>
                     {{ __('Housekeeping') }}

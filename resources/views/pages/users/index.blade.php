@@ -9,9 +9,6 @@
             <div>
                 @include('pages.users.fragments.user.online-friends')
             </div>
-            <div>
-                @include('pages.users.fragments.user.referrals')
-            </div>
         </div>
         <div class="w-full h-auto lg:w-1/3 flex flex-col">
             @include('pages.users.fragments.latest-articles')

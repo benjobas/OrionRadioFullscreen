@@ -1,4 +1,4 @@
-<span class="w-full bg-slate-100 border border-slate-300 dark:bg-slate-800 dark:border-slate-700 col-span-2 p-2 text-slate-800 dark:text-slate-200 rounded-lg text-sm">
+<span class="w-full bg-slate-100 border border-slate-300 dark:bg-customBlack dark:border-customBlack-light col-span-2 p-2 text-slate-800 dark:text-slate-200 rounded-lg text-sm">
     <i class="fa-solid fa-triangle-exclamation mr-1 animate-bounce text-blue-400"></i>
     {{ __("Enabling two-factor authentication adds an additional layer of security, safeguarding your account against unauthorized access.") }}
     <br><br>

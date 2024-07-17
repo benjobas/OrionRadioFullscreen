@@ -16,11 +16,11 @@
         title="{{ $title }}"
         description="{{ $description }}"
     />
-    <div class="bg-white h-auto dark:bg-slate-950 rounded-lg border-b-2 border-gray-300 dark:border-slate-800 shadow-lg">
+    <div class="bg-white h-auto dark:bg-customBlack-dark rounded-lg border-b-2 border-gray-300 dark:border-customBlack-dark shadow-lg">
         <div class="w-full flex flex-col p-2 min-h-[523px]">
             @foreach ($rankings as $index => $ranking)
                 <div @class([
-                    "flex bg-white hover:bg-slate-100 hover:dark:bg-slate-700 odd:bg-gray-100 group first:rounded-t-lg last:rounded-b-lg border-b border-gray-200 dark:border-gray-700 dark:bg-slate-800 dark:odd:bg-slate-850",
+                    "flex bg-white hover:bg-slate-100 hover:dark:bg-customBlack-light odd:bg-gray-100 group first:rounded-t-lg last:rounded-b-lg border-b border-gray-200 dark:border-customBlack-dark dark:bg-customBlack",
                     "h-auto" => $index < 3,
                     "h-12" => $index >= 3
                 ])>
@@ -34,11 +34,11 @@
                             style="background-image: url('{{ $getUser($ranking)->figure_path }}&direction=3&head_direction=2&size=m&headonly=1')"
                         ></div>
                     </div>
-                    <div class="w-full h-auto flex divide-x dark:divide-slate-700 overflow-hidden">
+                    <div class="w-full h-auto flex divide-x dark:divide-customBlack-dark overflow-hidden">
                         <a
                             href="{{ route('users.profile.show', $getUser($ranking)->username) }}"
                             @class([
-                                "w-2/3 hover:text-blue-500 dark:text-slate-200  h-full flex justify-start pl-3 items-center truncate",
+                                "w-2/3 hover:text-customBlue dark:text-slate-200  h-full flex justify-start pl-3 items-center truncate",
                                 "font-medium" => $index < 3,
                                 "font-normal text-sm" => $index > 2
                             ])

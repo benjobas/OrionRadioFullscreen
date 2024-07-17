@@ -6,12 +6,6 @@ return [
             'en' => 'English',
             'es' => 'Spanish',
             'pt_BR' => 'Portuguese',
-            'tr' => 'Turkish',
-            'da' => 'Danish',
-            'nl' => 'Dutch',
-            'fi' => 'Finnish',
-            'fr' => 'French',
-            'de' => 'German',
         ],
 
         'register' => [
@@ -70,11 +64,11 @@ return [
      * Meta data configurations
      */
     'meta' => [
-        'author' => 'inicollas',
-        'title' => 'OrionCMS - An open-source project for retros management',
-        'description' => 'Join us: https://discord.com/invite/Kb7USXupCT',
-        'keywords' => 'habbo, habbo hotel, friends, games',
-        'image' => 'assets/images/logo.png',
+        'author' => 'HoloChile & Nicholas',
+        'title' => 'HoloChile',
+        'description' => 'Unete a esta hermosa comunidad',
+        'keywords' => 'habbo, habbo hotel, friends, games, amigos',
+        'image' => 'assets/images/logo1.png',
         'twitter' => '@Twitter'
     ],
 
@@ -87,6 +81,9 @@ return [
             'enabled' => !! env('NITRO_ENABLED', true),
             'cms_toggle_button' => true,
             'online_count_button' => true,
+            'stream_url' => env('STREAM_URL', 'null'),
+            'show_fullscreen_button' => env('SHOW_FULLSCREEN_BUTTON', true),
+            'show_radio_buttons' => env('SHOW_RADIO_BUTTONS', true),
 
             /**
              * Path to the client folder (relative to the public folder)

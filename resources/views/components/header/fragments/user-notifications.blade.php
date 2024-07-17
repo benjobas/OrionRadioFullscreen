@@ -4,7 +4,7 @@
     x-transition.origin.top.center
     style="display: none"
 >
-    <div class="w-96 max-w-full max-h-96 relative bg-white dark:bg-slate-800 rounded-lg shadow-lg mt-2">
+    <div class="w-96 max-w-full max-h-96 relative bg-white dark:bg-customBlack rounded-lg shadow-lg mt-2">
         <div class="absolute h-2 w-2 bg-white dark:bg-gray-800 rotate-45 -top-1 left-1/2 -translate-x-1/2"></div>
 
         <div class="flex flex-col max-h-96">
@@ -15,9 +15,9 @@
             </template>
 
             <template x-if="!loading && notifications.length">
-                <div class="py-1 px-2 flex justify-between mb-1 border-b dark:border-slate-700">
+                <div class="py-1 px-2 flex justify-between mb-1 border-b dark:border-customBlack-light">
                     <span
-                        class="cursor-pointer text-sm hover:underline underline-offset-2 text-blue-500 hover:text-blue-400"
+                        class="cursor-pointer text-sm hover:underline underline-offset-2 text-customCyan hover:text-customCyan-light"
                         @click="markAllAsRead"
                     >
                         <i class="fa-solid fa-check"></i>
@@ -40,8 +40,8 @@
                             x-on:click="visitNotification(notification)"
                             x-bind:class="{
                                 'cursor-pointer': notification.url,
-                                'bg-slate-100 dark:bg-slate-700': notification.state === 'read',
-                                'hover:bg-slate-100 dark:hover:bg-slate-700': notification.state === 'seen',
+                                'bg-customGreen-light dark:bg-customBlack-light': notification.state === 'read',
+                                'hover:bg-customGreen-light dark:hover:bg-customBlack-light': notification.state === 'seen',
                             }"
                             class="first-of-type:rounded-t-lg h-16 py-1 flex gap-2 overflow-hidden border-b dark:border-slate-700 group"
                         >

@@ -96,21 +96,6 @@ class BadgePage extends Page
                             ->placeholder('...')
                             ->visible(fn () => isset($this->data['nitro']['description']) ?? false),
                     ]),
-
-                Section::make('Flash Texts')
-                    ->collapsible()
-                    ->visible(fn () => isset($this->data['flash']) && !empty($this->data['flash']))
-                    ->schema([
-                        TextInput::make('flash.title')
-                            ->label(__('filament::resources.inputs.badge_title'))
-                            ->placeholder('...')
-                            ->visible(fn () => isset($this->data['flash']['title']) ?? false),
-
-                        TextInput::make('flash.description')
-                            ->label(__('filament::resources.inputs.badge_description'))
-                            ->placeholder('...')
-                            ->visible(fn () => isset($this->data['flash']['description']) ?? false),
-                    ]),
             ])
             ->statePath('data');
     }
@@ -125,7 +110,7 @@ class BadgePage extends Page
         }
 
         $badgeData = app(ExternalTextsParser::class)->getBadgeData($badgeCode);
-        $this->badgeWasPreviouslyCreated = is_array($badgeData['nitro']) || is_array($badgeData['flash']);
+        $this->badgeWasPreviouslyCreated = is_array($badgeData['nitro']);
 
         if ($this->badgeWasPreviouslyCreated) {
             Notification::make()
@@ -140,9 +125,7 @@ class BadgePage extends Page
                 ...$this->getDefaultDataBehavior(
                     $badgeData['image'] ?? null,
                     $badgeData['nitro']['title'] ?? null,
-                    $badgeData['nitro']['description'] ?? null,
-                    $badgeData['flash']['title'] ?? null,
-                    $badgeData['flash']['description'] ?? null
+                    $badgeData['nitro']['description'] ?? null
                 )
             ];
 
@@ -165,19 +148,13 @@ class BadgePage extends Page
     private function getDefaultDataBehavior(
         ?string $badgeImageUrl = null,
         ?string $nitroTitle = null,
-        ?string $nitroDesc = null,
-        ?string $flashTitle = null,
-        ?string $flashDesc = null
+        ?string $nitroDesc = null
     ): array {
         return [
             'image' => $badgeImageUrl ?? '',
             'nitro' => [
                 'title' => $nitroTitle ?? '',
                 'description' => $nitroDesc ?? ''
-            ],
-            'flash' => [
-                'title' => $flashTitle ?? '',
-                'description' => $flashDesc ?? ''
             ]
         ];
     }
@@ -185,7 +162,6 @@ class BadgePage extends Page
     public function create()
     {
         $nitroEnabled = config('hotel.client.nitro.enabled');
-        $flashEnabled = config('hotel.client.flash.enabled');
 
         // image and code fields are required when creating a new badge
         if(!$this->badgeWasPreviouslyCreated && (empty($this->data['image']) || empty($this->data['code']))) {
@@ -205,7 +181,7 @@ class BadgePage extends Page
 
         $externalTextsParser = app(ExternalTextsParser::class);
 
-        if((empty($this->data['nitro']) && $nitroEnabled) || (empty($this->data['flash']) && $flashEnabled)) {
+        if((empty($this->data['nitro']) && $nitroEnabled)) {
             Notification::make()
                 ->icon('heroicon-o-exclamation-triangle')
                 ->iconColor('danger')
@@ -220,7 +196,6 @@ class BadgePage extends Page
             $this->uploadBadgeImage($externalTextsParser);
 
             if(!empty($this->data['nitro']) && $nitroEnabled) $externalTextsParser->updateNitroBadgeTexts($this->data['code'], ...$this->data['nitro']);
-            if(!empty($this->data['flash']) && $flashEnabled) $externalTextsParser->updateFlashBadgeTexts($this->data['code'], ...$this->data['flash']);
         } catch (\Throwable $exception) {
             Log::channel('badge')->error('[ORION BADGE RESOURCE] - ERROR: ' . $exception->getMessage());
 

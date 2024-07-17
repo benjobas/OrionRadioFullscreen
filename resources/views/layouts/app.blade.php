@@ -12,7 +12,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name') }} - @yield('title', 'Index')</title>
+    <title>{{ config('app.name') }} @yield('title')</title>
 
     <meta name="keywords" content="{{ config('hotel.meta.keywords') }}">
     <meta name="rating" content="Geral">
@@ -22,8 +22,8 @@
     <meta property="og:url" content="{{ config('app.url') }}">
     <meta property="og:image" content="{{ asset(config('hotel.meta.image')) }}">
 
-    <meta name="theme-color" content="#478dde">
-    <meta name="msapplication-navbutton-color" content="#478dde">
+    <meta name="theme-color" content="#28B5BE">
+    <meta name="msapplication-navbutton-color" content="#28B5BE">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 

@@ -4,7 +4,7 @@
 />
 
 <form
-    class="mt-4 bg-white dark:bg-slate-950 border-b-2 border-gray-300 dark:border-gray-800 rounded-lg p-4 flex flex-col gap-6 shadow-lg"
+    class="mt-4 bg-white dark:bg-customBlack-dark border-b-2 border-gray-300 dark:border-customBlack-light rounded-lg p-4 flex flex-col gap-6 shadow-lg"
     action="{{ $twoFactorRoute }}"
     method="POST"
 >

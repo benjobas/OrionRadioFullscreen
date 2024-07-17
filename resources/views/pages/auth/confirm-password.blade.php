@@ -27,7 +27,7 @@
             <div class="flex flex-col">
                 <x-ui.buttons.default
                     type="submit"
-                    class="dark:bg-blue-600 bg-blue-500 border-blue-700 hover:bg-blue-400 dark:hover:bg-blue-500 dark:shadow-blue-700/75 shadow-blue-600/75 flex-1 py-3 text-white">
+                    class="dark:bg-blue-600 bg-customBlue border-customBlue-dark hover:bg-customBlue-light dark:hover:bg-blue-500 dark:shadow-blue-700/75 shadow-customBlue-600/75 flex-1 py-3 text-white">
                     <i class="fa-regular fa-square-check"></i>
                     {{ __('Confirm') }}
                 </x-ui.buttons.default>

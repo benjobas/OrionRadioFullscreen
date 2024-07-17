@@ -16,7 +16,7 @@
     )"
 >
     <form
-        class="mt-4 bg-white dark:bg-slate-950 border-b-2 border-gray-300 dark:border-gray-800 rounded-lg p-4 flex flex-col gap-6 shadow-lg"
+        class="mt-4 bg-white dark:bg-customBlack-dark border-b-2 border-gray-300 dark:border-customBlack-light rounded-lg p-4 flex flex-col gap-6 shadow-lg"
         action="{{ route('users.settings.index', 'ingame') }}"
         method="POST"
         @submit.prevent="submitForm"
@@ -89,7 +89,7 @@
             <x-ui.buttons.loadable
                 alpine-model="loading"
                 type="submit"
-                class="dark:bg-green-600 bg-green-500 border-green-700 hover:bg-green-400 dark:hover:bg-green-500 dark:shadow-green-700/75 shadow-green-600/75 py-3 text-white"
+                class="dark:bg-customCyan dark:border-customCyan-dark bg-customBlue border-customBlue-dark hover:bg-customBlue-light dark:hover:bg-customCyan-light dark:shadow-customBlue-700/75 shadow-customCyan-600/75 py-3 text-white"
             >
                 <i class="fa-solid fa-gamepad mr-2"></i>
                 {{ __('Update Settings') }}

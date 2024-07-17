@@ -55,9 +55,9 @@
                 <x-ui.buttons.redirectable
                     href="{{ route('shop.categories.show', $category->id) }}#products"
                     @class([
-                        "!justify-start dark:text-slate-200 border-none bg-white dark:bg-slate-950 shadow py-3",
+                        "!justify-start dark:text-slate-200 border-none bg-white dark:bg-customBlack-dark shadow py-3",
                         "!bg-blue-400 !text-white" => $currentCategoryId == $category->id,
-                        "hover:ml-2 hover:!text-blue-400 transition-all" => $currentCategoryId != $category->id,
+                        "hover:ml-2 hover:!text-customBlue dark:hover:!text-customCyan transition-all" => $currentCategoryId != $category->id,
                     ])
                 >
                     <img src="{{ $category->icon }}" label="{{ $category->name }}" class="mr-2" />
@@ -74,7 +74,7 @@
                             title="{{ $box->name }}"
                             description="{{ $box->description }}"
                         />
-                        <div class="mt-4 p-4 prose dark:prose-invert text-xs font-medium dark:text-slate-200 bg-white dark:bg-slate-950 rounded-lg border-b-2 border-gray-300 dark:border-slate-800 shadow-lg">
+                        <div class="mt-4 p-4 prose dark:prose-invert text-xs font-medium dark:text-slate-200 bg-white dark:bg-customBlack-dark rounded-lg border-b-2 border-gray-300 dark:border-customBlack-light shadow-lg">
                             {!! $box->content !!}
                         </div>
                     </div>

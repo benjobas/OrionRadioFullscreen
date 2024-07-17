@@ -6,13 +6,13 @@
 <x-container>
     <div class="w-full h-auto relative flex justify-start flex-col lg:flex-row items-start gap-6">
         <div
-            class="flex flex-col gap-2 h-auto w-full lg:w-1/4 bg-white dark:bg-slate-950 border-b-2 border-gray-300 dark:border-gray-800 rounded-lg p-2"
+            class="flex flex-col gap-2 h-auto w-full lg:w-1/4 bg-white dark:bg-customBlack-dark border-b-2 border-gray-300 dark:border-customBlack-light rounded-lg p-2"
         >
         @forelse ($navigations as $navigation)
             <a href="{{ route("users.settings.index", $navigation['type']) }}" @class([
                 "rounded font-semibold p-3 text-sm text-slate-800 dark:text-white",
-                "border-b-2 bg-slate-100 border-blue-400 dark:bg-slate-800 !text-blue-400" => $page == $navigation['type'],
-                "dark:hover:bg-slate-800 hover:bg-slate-100 hover:!text-blue-400" => $page != $navigation['type']
+                "border-b-2 bg-slate-100 border-customBlue dark:bg-customBlack-light !text-customBlue dark:border-customCyan dark:!text-customCyan" => $page == $navigation['type'],
+                "dark:hover:bg-customBlack-light hover:bg-slate-100 hover:!text-customBlue dark:hover:!text-customCyan" => $page != $navigation['type']
             ])>
                 <i class="{{ $navigation['icon'] }} mr-1"></i>
                 {{ $navigation['title'] }}

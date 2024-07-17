@@ -11,9 +11,9 @@
                 description="{{ __('All recent articles') }}"
                 icon="articles"
             />
-            <div class="w-full max-h-72 lg:h-auto lg:max-h-none overflow-y-auto flex flex-col p-3 mt-4 bg-white dark:bg-slate-950 rounded-lg border-b-2 border-gray-300 dark:border-slate-800 shadow-lg">
+            <div class="w-full max-h-72 lg:h-auto lg:max-h-none overflow-y-auto flex flex-col p-3 mt-4 bg-white dark:bg-customBlack-dark rounded-lg border-b-2 border-gray-300 dark:border-customBlack-light shadow-lg">
                 @foreach ($latestArticlesWithCategories as $category => $latestArticles)
-                    <div class="border-b uppercase font-semibold pb-2 mb-4 [&:not(:first-of-type)]:mt-4 text-sm text-slate-800 dark:text-white border-dashed border-slate-400 dark:border-slate-800">
+                    <div class="border-b uppercase font-semibold pb-2 mb-4 [&:not(:first-of-type)]:mt-4 text-sm text-slate-800 dark:text-white border-dashed border-slate-400 dark:border-customBlack-dark">
                         {{ __($category) }}
                     </div>
 
@@ -24,9 +24,9 @@
                             data-tippy-singleton
                             data-tippy-content="<small>Posted by <b>{{ $lastArticle->user->username }}</b></small>"
                             @class([
-                                "dark:text-slate-300 text-sm py-1.5 border-l border-slate-300 dark:border-slate-600 pl-3 decoration-slate-400 hover:!text-blue-400",
-                                "!border-blue-400 !text-blue-400 border-l-2" => $isActive,
-                                "hover:!border-slate-400" => !$isActive,
+                                "dark:text-slate-300 text-sm py-1.5 border-l border-slate-300 dark:border-slate-600 pl-3 decoration-slate-400 hover:!text-customBlue-light dark:hover:!text-customCyan-light",
+                                "!border-customBlue-dark !text-customBlue-light border-l-2 dark:!border-customCyan-dark dark:!text-customCyan-light" => $isActive,
+                                "hover:!border-customBlue-dark dark:hover:!border-customCyan-dark" => !$isActive,
                                 "!border-lime-400" => !$isActive && $lastArticle->is_promotion && $lastArticle->promotion_ends_at->gt(now())
                             ])
                         >

@@ -2,7 +2,7 @@
     <x-ui.buttons.default
         @click="openInventory()"
         x-bind:disabled="bagTab == 'inventory'"
-        class="dark:bg-blue-600 rounded-r-none bg-blue-500 border-blue-700 hover:bg-blue-400 dark:hover:bg-blue-500 dark:shadow-blue-700/75 shadow-blue-600/75 text-white"
+        class="dark:bg-customCyan dark:border-customCyan-dark rounded-r-none bg-customBlue border-customBlue-dark hover:bg-customBlue-light dark:hover:bg-customCyan-light dark:shadow-customCyan-700/75 shadow-customBlue-600/75 text-white"
     >
         {{ __('Inventory') }}
         <template>

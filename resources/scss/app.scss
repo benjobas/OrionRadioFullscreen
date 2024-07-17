@@ -31,12 +31,12 @@ body {
 }
 
 body:not(.maintenance) {
-    background: url('/assets/images/orion-bg.png'), theme('colors.slate.50');
+    background: url('/assets/images/orion-bg.png'), theme('colors.customGreen.DEFAULT');
 }
 
 html.dark body,
 body.maintenance {
-    background: url('/assets/images/orion-bg.png'), theme('colors.slate.900');
+    background: url('/assets/images/orion-bg.png'), theme('colors.customBlack.DEFAULT');
 }
 
 body.maintenance {
@@ -91,7 +91,7 @@ header {
 /* Firefox */
 * {
     scrollbar-width: auto;
-    scrollbar-color: #2058d9 #ffffff;
+    scrollbar-color: #ffffff73 #ffffff26;   
 }
 
 html {
